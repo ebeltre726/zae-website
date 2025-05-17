@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --header-font: "Sigmar";
+    --nav-font: "Arsenal SC";
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Set the body to remove default margin/padding and make it fill the screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Container for the video */
+.vid-container {
+    position: absolute;
+    top: 0;
+    width: 100%; /* Make the container take up full width */
+    height: 100%; /* Make the container take up full height */
+    overflow: hidden;
+    z-index: -1; /* Place the video behind the content */
+}
+
+/* Background video styling */
+.musicVideo {
+    position: absolute;
+    width: 100%; /* Ensure the video takes up the full width */
+    height: auto; /* Maintain the aspect ratio */
+    min-width: 100%; /* Ensure the video is wide enough to cover the screen */
+    min-height: 100%; /* Ensure the video is tall enough to cover the screen */
+    object-fit: cover;
+    object-position: center;
+}
+
+header {
+    margin-top: 5%;
+    padding: 1.25rem 1.875rem;
+}
+
+/* Content styling */
+.content {
+    position: relative;
+    z-index: 1; /* Keep the content in front of the video */
+    text-align: center;
+    color: white;
+    height: 100%;
+}
+
+.headerWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    padding-top: 3rem;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+h1 {
+    font-size: 3em;
+    color: red;
+    font-family: var(--header-font);
+    width: 90%;
+    margin: auto;
+    text-wrap: nowrap;
+    text-shadow: .5rem .5rem 1rem black;
+}
+
+nav a {
+    font-size: 1.2rem;
+    font-family: var(--nav-font);
+    text-decoration: none;
+    color: white;
+    text-shadow: .5rem .5rem 1rem black;
+}
+
+nav a:hover {
+    transition: color .4s;
+    color: grey;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    width: 50%;
+    gap: 1rem;
+}
+
+.icons {
+    width: 25px;
+}
+
+.icons:hover {
+    opacity: .5;
+    transition: opacity .4s;
+}
+
+
+
+@media (min-width: 768px) {
+    header {
+        margin: 0;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .headerWrapper {
+        flex-direction: row;
+        align-content: center;
+    }
+
+    h1 {
+        margin: 0;
+        width: auto;
+        margin-right: auto;
+    }
+
+    nav {
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 30%;
+        gap: 0;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+        flex: 0 0 50%;
+    }
+
+    .icons {
+        width: 45px
+    }
+}
