@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exile&display=swap');
 
 :root {
     --header-font: "Sigmar";
     --nav-font: "Arsenal SC";
+    --nav-font-2: "Exile", system-ui
 }
 
 * {
@@ -48,7 +50,7 @@ header {
 }
 
 /* Content styling */
-.content {
+main {
     position: relative;
     z-index: 1; /* Keep the content in front of the video */
     text-align: center;
@@ -59,28 +61,43 @@ header {
 .headerWrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 nav {
-    display: flex;
-    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+    padding-top: 2rem;
+    margin: auto;
+    align-items: center;
     justify-content: center;
     gap: 2.5rem;
 }
 
+nav li {
+    text-decoration: none;
+    list-style-type: none;
+    text-align: center;
+}
+
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     color: red;
-    font-family: var(--header-font);
+    font-family: "blow-up", sans-serif;
+    letter-spacing: .05em;
     width: 90%;
     margin: auto;
     text-wrap: nowrap;
     text-shadow: .5rem .5rem 1rem black;
+    text-align: center;
 }
 
 nav a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     font-family: var(--nav-font);
+    letter-spacing: .1em;
     text-decoration: none;
     color: white;
     text-shadow: .5rem .5rem 1rem black;
@@ -91,17 +108,289 @@ nav a:hover {
     color: grey;
 }
 
+#xout {
+    position: absolute;
+    top: 2%;
+    z-index: 1000;
+    right: 3.5%;
+    max-width: 2.25rem;
+    cursor: pointer;
+}
+
+#about {
+    display: block;
+    position: absolute;
+    padding: 3.5rem 3% 3% 3%;
+    font-family: var(--nav-font);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 1.6rem;
+    color: white;
+    z-index: 999;
+    top: 12%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 86%;
+}
+
+#abtContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    margin: 0 auto;
+}
+
+#aboutBody {
+    grid-column: span 2;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
+}
+
+#aboutBody2 {
+    grid-column: 2;
+    text-shadow: 1rem 1rem 2rem black;
+    grid-row: 2;
+}
+
+#abtImg {
+    grid-column: 1;
+    max-width: 100%;
+    height: auto;
+    align-self: start;
+}
+
+#music {
+    width: 86%;
+    position: absolute;
+    box-shadow: .05rem .05rem .5rem;
+    backdrop-filter: blur(10px);
+    margin-left: 7%;
+    z-index: 999;
+    margin-right: 7%;
+    height: 79%;
+    top: 12%;
+    overflow: hidden;
+}
+
+.musicBg {
+    position: absolute;
+    margin: auto;
+    width: 55rem;
+    z-index: -10;
+    top: -15rem;
+    opacity: .2;
+    left: -9rem;
+    z-index: -10;
+    display: block;
+}
+
+.tabsHeader {
+    display: flex;
+    margin-bottom: 1rem;
+    background-color: rgba(255,255,255,.1);
+    border-bottom: solid 1px black;
+}
+  
+.tabButton {
+    background: transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-family: var(--nav-font);
+    font-weight: 300;
+    border-radius: 0 2rem 0 0;
+    width: 40%;
+    padding: 0;
+    height: 3.5rem;
+    color: white;
+    cursor: pointer;
+}
+  
+.tabButton.active {
+    background: rgb(255, 0, 0,0.1);
+    font-weight: 700;
+    color: white;
+}
+  
+.tabPanel {
+    display: none;
+}
+  
+.tabPanel.active {
+    display: block;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: .25rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.8);
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255,255,255,.1);
+    border-radius: 1rem;
+}
+
+.songContainer {
+    position: absolute;
+    padding-top: 10%;
+    top: 5.5rem; /* Starts from the top of the #music container */
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(100000px);
+    overflow-y: auto;
+    margin: auto;
+    width: 80%;
+}
+
+.albumHeader {
+    font-family: var(--nav-font);
+    color: white;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
+    padding-left: 5%;
+    background-color: rgba(255,0,0,0.2);
+}
+
+.itemBox {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.itemImage {
+    display: flex;
+    justify-content: center;
+    padding: 10% 10% 0 10%;
+}
+
+.itemImage img {
+    max-width: 90%;
+}
+
+.itemTitle {
+    font-family: var(--nav-font);
+    padding-top: 3%;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
+}
+
+.musicIcons {
+    display: flex;
+    padding-top: 5%;
+    width: 55%;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
+
+.musicIcon {
+    width: 1.2rem;
+}
+
+.musicIcon:hover {
+    opacity: .3;
+    transition: opacity .3s;
+}
+
+#contact {
+    width: 85%;
+    position: absolute;
+    padding-top: 17%;
+    top: 12%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 42.5rem;
+    background-color: rgba(0,0,0,.1);
+    backdrop-filter: blur(10px);
+    margin: auto;
+}
+
+.contactHeader {
+    font-family: var(--nav-font);
+    color: white;
+    text-align: center;
+}
+
+.contact-form {
+    padding: 20% 10% 10% 10%;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--nav-font);
+    font-size: 1rem;
+    color: white;
+    text-shadow: 1rem 1rem 2rem black;
+    gap: .5rem;
+}
+.contact-form label {
+    text-align: center;
+}
+
+.contact-form input, textarea {
+    background-color: rgba(0,0,0,.4);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.contact-form button {
+    margin-top: 10%;
+    padding-top: 5%;
+    font-family: var(--nav-font);
+    background-color: rgba(255,0,0,.2);
+    text-align: center;
+    padding: 5%;
+    color: white;
+}
+
+#muter {
+    position: fixed;
+    z-index: 1000;
+    top: 70%;
+    right: 0;
+    font-family: var(--nav-font);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    background-color: black;
+    color: #fff;
+    border-radius: .5em 0 0 .5em;
+    padding: .4em;
+    cursor: pointer;
+    font-size: .7em;
+    z-index: 1001;
+}
+
+#muteText {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;
+}
+
+#muteIcon {
+    padding-top: .2em;
+    width: 1em;
+}
+
 footer {
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     align-items: center;
     margin: auto;
     left: 0;
     right: 0;
-    bottom: 50px;
+    bottom: 30px;
     width: 50%;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .icons {
@@ -113,40 +402,101 @@ footer {
     transition: opacity .4s;
 }
 
-
-
-@media (min-width: 768px) {
+@media (min-width: 350px) {
     header {
-        margin: 0;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding: .5rem;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    #about {
+        width: 85%;
+        max-height: 43rem;
+    }
+    #abtImg {
+        max-width: 100%;
+        max-height: 40rem;
+    }
+}
+
+@media (min-width: 550px) {
+
+    header {
+        margin-top: 2rem;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+    #about {
+        top: 16%;
+        max-height: 41rem;
+    }
+    #abtContent {
+        display: flex;
+        flex-direction: ;
+    }
+    #abtImg {
+        max-width: 100%;
+        max-height: 40rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header {
+        width: 90%;
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+        display: flex;
+        padding: 0;
     }
 
     .headerWrapper {
         flex-direction: row;
         align-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     h1 {
         margin: 0;
         width: auto;
         margin-right: auto;
+        font-size: 5em;
     }
 
     nav {
+        display: flex;
         align-items: center;
         justify-content: center;
+        width: 75%;
+        margin: 0;
+        margin-left: 10%;
         padding: 0;
-        width: 30%;
         gap: 0;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    footer {
+        gap: 1rem;
     }
 
     nav a {
         font-size: 1.5rem;
-        flex: 0 0 50%;
     }
 
     .icons {
-        width: 45px
+        width: 30px;
     }
 }

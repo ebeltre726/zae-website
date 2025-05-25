@@ -5,32 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zae Lay Low</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/aqd2job.css">
 </head>
 <body>
     <div class="vid-container">
-    <video class="musicVideo" autoplay loop muted playsinline disablepictureinpicture>
-        <source src="Zerocelsius.mp4" type="video/mp4">
+    <video class="musicVideo" autoplay loop muted disablepictureinpicture>
+        <source src="zerocelsius.mp4" type="video/mp4">
     </video>
     <audio id="audioPlayer" autoplay>
     </audio>
     </div>
-    <div class="content">
-        <header>
-            <div class="headerWrapper">
-                <h1>Zae Lay Low</h1>
-                <nav>
-                    <a class="navlinks" href="#music">MUSIC</a>
-                    <a class="navlinks" href="#contact">CONTACT</a>
-                </nav>
-            </div>
-        </header>
+    <header>
+        <div class="headerWrapper">
+            <h1>Zae Lay Low</h1>
+            <nav>
+                <li><a class="navlinks" href="#music" data-section="music">MUSIC</a></li>
+                <li><a class="navlinks" href="#about" data-section="about">ABOUT</a></li>
+                <li><a class="navlinks" href="#contact" data-section="contact">CONTACT</a></li>
+                <li><a class="navlinks" href="#newsletter" data-section="newsletter">NEWSLETTER</a></li>
+            </nav>
+        </div>
+    </section>
+    </header>
+    <main>
+        <div id="muter"><span id="muteText">MUTE</span><img id="muteIcon" src="img/mute.png"></div>
         <footer>
-            <a href="#"><img src="img/spotify.png" class="icons spotandig"></a>
-            <a href="#"><img src="img/instagram.png" class="icons spotandig"></a>
-            <a href="#"><img src="img/tiktok.png" class="icons tikandtube"></a>
-            <a href="#"><img src="img/youtube.png" class="icons tikandtube"></a>
+            <a href="#"><!-- Image from Freepik by Roundicons Premium --><img src="img/spotify.png" class="icons"></a>
+            <a href="#"><!-- Image from Freepik --><img src="img/instagram.png" class="icons"></a>
+            <a href="#"><!-- Image from Freepik --><img src="img/tiktok.png" class="icons"></a>
+            <a href="#"><!-- Image from Freepik by Fathema Khanom --><img src="img/youtube.png" class="icons"></a>
         </footer>
-    </div>
+    </main>
     <script src="script.js"></script>
+    <script type="module" src="holdSongs.js"></script>
+    <script type="module" src="tabManager.js"></script>
+    <script type="module" src="overlayManager.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="nav.js"></script>
+    <script type="module" src="templates.js"></script>
+    <script type="module" src="domUtils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
 </body>
 </html>

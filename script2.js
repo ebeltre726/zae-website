@@ -12,7 +12,30 @@ const nav = document.querySelector('nav');
 const muteBtn = document.getElementById("muter");
 const muteIcon = document.getElementById("muteIcon");
 const muteText = document.getElementById("muteText");
-const about = document.getElementById("about");
+const mainContent = document.getElementById("about");
+const closeBtn = document.getElementById("xout");
+
+const sectionMap = {
+  music: renderMusicSection,
+  about: renderAboutSection,
+  contact: renderContactForm,
+  newsletter: renderNewsletterForm
+};
+
+function renderAboutSection() {
+  const about = document.createElement('section');
+  about.id = 'about';
+  const abtContent = document.createElement('div');
+  abtContent.id = 'abtContent';
+  const aboutBody = document.createElement('span');
+  aboutBody.id = 'aboutBody';
+  aboutBody.textContent = "An emotionally raw, genre-building artist crafting a cinematic fusion of pop, rap, and R&B, layered with nostalgic electronic textures. Signed to UMPG as a songwriter in 2020, he's now stepping into the spotlight as a recording"
+  const aboutBody2 = document.createElement('span');
+  aboutBody2.id = 'aboutBody2';
+  aboutBody2.textContent = "artist with a distinct voice and a powerful catalog of unreleased music."
+  const aboutImg = document.createElement('img');
+  aboutImg.id = 'abtImg';
+}
 
 let isMuted = false;
 let audioStarted = false;
@@ -177,6 +200,14 @@ function playRandomSong() {
 audioPlayer.addEventListener('ended', function() {
     playRandomSong();
 });
+
+
+  ____       _ _         __
+ |  _ \     | | |       /_/ 
+ | |_) | ___| | |_ _ __ ___ 
+ |  _ < / _ \ | __| '__/ _ \
+ | |_) |  __/ | |_| | |  __/
+ |____/ \___|_|\__|_|  \___|
 
 
 
