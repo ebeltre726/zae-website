@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+t@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exile&display=swap');
 
@@ -133,6 +133,7 @@ nav a:hover {
     right: 0;
     margin: auto;
     width: 86%;
+    height: 77.5vh;
 }
 
 #abtContent {
@@ -168,7 +169,7 @@ nav a:hover {
     margin-left: 7%;
     z-index: 999;
     margin-right: 7%;
-    height: 79%;
+    height: 79vh;
     top: 12%;
     overflow: hidden;
 }
@@ -309,7 +310,7 @@ nav a:hover {
     left: 0;
     right: 0;
     z-index: 999;
-    height: 42.5rem;
+    height: 79vh;
     background-color: rgba(0,0,0,.1);
     backdrop-filter: blur(10px);
     margin: auto;
