@@ -129,9 +129,8 @@ nav a:hover {
     color: white;
     z-index: 999;
     top: 12%;
-    left: 0;
-    right: 0;
-    margin: auto;
+    margin-left: 7%;
+    margin-right: 7%;
     width: 86%;
     height: 77.5vh;
 }
