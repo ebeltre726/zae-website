@@ -314,6 +314,7 @@ nav a:hover {
     height: 79vh;
     background-color: rgba(0,0,0,.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     margin: auto;
 }
 
