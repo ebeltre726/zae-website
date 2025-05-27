@@ -128,11 +128,11 @@ nav a:hover {
     font-size: 1.6rem;
     color: white;
     z-index: 999;
-    top: 12%;
+    top: 12dvh;
     margin-left: 7%;
     margin-right: 7%;
     width: 86%;
-    height: 77.5vh;
+    height: calc(100dvh - 12dvh);
 }
 
 #abtContent {
@@ -169,8 +169,8 @@ nav a:hover {
     margin-left: 7%;
     z-index: 999;
     margin-right: 7%;
-    height: 79vh;
-    top: 12%;
+    height: calc(100dvh - 12dvh);
+    top: 12dvh;
     overflow: hidden;
 }
 
@@ -306,11 +306,11 @@ nav a:hover {
     width: 85%;
     position: absolute;
     padding-top: 17%;
-    top: 12%;
+    top: 12dvh;
     left: 0;
     right: 0;
     z-index: 999;
-    height: 79vh;
+    height: calc(100dvh - 12dvh);
     background-color: rgba(0,0,0,.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
